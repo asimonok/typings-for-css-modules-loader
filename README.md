@@ -4,7 +4,7 @@ Webpack loader that works as a css-loader drop-in replacement to generate TypeSc
 
 ## Installation
 
-Install via npm `npm install --save-dev typings-for-css-modules-loader`
+Install via npm `npm install --save-dev git+https://github.com/asimonok/typings-for-css-modules-loader.git`
 
 ## Options
 

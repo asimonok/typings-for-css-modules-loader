@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
-    "prepublish": "npm run build",
+    "preversion": "npm run build",
     "pretest": "rm -f ./test/example*.css.d.ts",
     "test:diff": "(cd test; set -e; for f in example*css.d.ts; do diff $f expected-$f; done;)",
     "test:run": "babel-node ./node_modules/webpack/bin/webpack --config ./test/webpack.config.babel.js",
