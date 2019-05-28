@@ -65,6 +65,9 @@ e.g.:
   { test: /\.css$/, loader: 'typings-for-css-modules-loader?silent' }
 ```
 
+### `noSemicolons`-option
+Prevents outputted lines from having semicolons at the end. This is useful when you want to enforce no semicolons with a linter. The default is to add semicolons.
+
 ### `banner`-option
 To add a "banner" prefix to each generated `*.d.ts` file, you can pass a string to this option as shown below. The prefix is quite literally prefixed into the generated file, so please ensure it conforms to the type definition syntax.
 

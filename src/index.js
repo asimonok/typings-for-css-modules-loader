@@ -34,6 +34,8 @@ module.exports = function(...input) {
   }
 
   // mock async step 2 - offer css loader a "fake" callback
+  query.noSemicolons = query.noSemicolons? true : false;
+
   this.async = () => (err, content) => {
     if (err) {
       return callback(err);
@@ -53,7 +55,7 @@ module.exports = function(...input) {
 
     let cssModuleDefinition;
     if (!query.namedExport) {
-      cssModuleDefinition = generateGenericExportInterface(cssModuleKeys, filename);
+      cssModuleDefinition = generateGenericExportInterface(cssModuleKeys, filename, '  ', query.noSemicolons);
     } else {
       const [cleanedDefinitions, skippedDefinitions,] = filterNonWordClasses(cssModuleKeys);
       if (skippedDefinitions.length > 0 && !query.camelCase) {
@@ -72,7 +74,7 @@ These can be accessed using the object literal syntax; eg styles['delete'] inste
 `.yellow);
       }
 
-      cssModuleDefinition = generateNamedExports(nonReservedWordDefinitions);
+      cssModuleDefinition = generateNamedExports(nonReservedWordDefinitions, query.noSemicolons);
     }
     if (cssModuleDefinition.trim() === '') {
       // Ensure empty CSS modules export something
