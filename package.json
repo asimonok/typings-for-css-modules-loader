@@ -1,11 +1,11 @@
 {
-  "name": "typings-for-css-modules-loader",
+  "name": "typings-for-css-modules-extended-loader",
   "version": "1.8.1",
   "description": "Drop-in replacement for css-loader to generate typings for your CSS-Modules on the fly in webpack",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
-    "preversion": "npm run build",
+    "prepublish": "npm run build",
     "pretest": "rm -f ./test/example*.css.d.ts",
     "test:diff": "(cd test; set -e; for f in example*css.d.ts; do diff $f expected-$f; done;)",
     "test:run": "babel-node ./node_modules/webpack/bin/webpack --config ./test/webpack.config.babel.js",
