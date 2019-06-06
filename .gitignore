@@ -1,6 +1,7 @@
 node_modules
 bundle.js
 example*.css.d.ts
+lib/
 
 .DS_STORE
 .idea/

@@ -4,3 +4,5 @@
 jsconfig.json
 src
 test
+.DS_STORE
+.idea/
